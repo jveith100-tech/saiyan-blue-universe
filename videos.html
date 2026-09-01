@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinematics | Saiyan Blue Universe</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+    nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { opacity: 1; color: var(--primary-blue); }
+    .page-wrapper { width: 100%; max-width: 1100px; padding: 2rem; box-sizing: border-box; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .video-card { background: rgba(0,131,176,0.07); border: 1px solid var(--deep-cyan); border-radius: 10px; overflow: hidden; transition: box-shadow 0.3s, transform 0.3s; }
+    .video-card:hover { box-shadow: 0 0 25px rgba(0,210,255,0.35); transform: translateY(-4px); }
+    .video-card video { width: 100%; display: block; background: #000; max-height: 220px; object-fit: cover; }
+    .video-info { padding: 0.85rem 1rem; }
+    .video-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); letter-spacing: 1px; text-transform: uppercase; margin: 0 0 0.25rem; }
+    .video-desc { font-size: 0.78rem; color: var(--text-light); opacity: 0.7; margin: 0; }
+  </style>
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  <div class="aura-container page-wrapper">
+    <header>
+      <h1>SAIYAN BLUE <span>UNIVERSE</span></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="videos.html" class="active">Cinematics</a>
+      </nav>
+    </header>
+    <main>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls preload="metadata"><source src="videos/saiyan_blue_universe_trailer.mp4" type="video/mp4">Your browser does not support video.</video>
+          <div class="video-info"><p class="video-title">Saiyan Blue Universe Trailer</p><p class="video-desc">The official cinematic reveal of the Saiyan Blue Universe.</p></div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata"><source src="videos/saiyan_genesis_break.mp4" type="video/mp4">Your browser does not support video.</video>
+          <div class="video-info"><p class="video-title">Saiyan Genesis Break</p><p class="video-desc">The origin of divine ki — watch the genesis unfold.</p></div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata"><source src="videos/saiyan_blue_transformation.mp4" type="video/mp4">Your browser does not support video.</video>
+          <div class="video-info"><p class="video-title">Saiyan Blue Transformation</p><p class="video-desc">Witness the full Super Saiyan Blue power awakening.</p></div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata"><source src="videos/saiyan_blue_phantom_armor.mp4" type="video/mp4">Your browser does not support video.</video>
+          <div class="video-info"><p class="video-title">Saiyan Blue Phantom Armor</p><p class="video-desc">Divine ki forged into impenetrable phantom armor.</p></div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata"><source src="videos/saiyan_awakening_cinematic.mp4" type="video/mp4">Your browser does not support video.</video>
+          <div class="video-info"><p class="video-title">Saiyan Awakening Cinematic</p><p class="video-desc">The ultimate awakening — transcend every mortal limit.</p></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
