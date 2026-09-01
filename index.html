@@ -10,7 +10,48 @@
   <title>Saiyan Blue Universe</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saiyan Blue Universe</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+    nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { opacity: 1; color: var(--primary-blue); }
+  </style>
+</head>
 <body>
+  <canvas id="particleCanvas"></canvas>
+  <div class="aura-container">
+    <header>
+      <h1>SAIYAN BLUE <span>UNIVERSE</span></h1>
+      <p>Transcend Mortal Limits</p>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="videos.html">Cinematics</a>
+      </nav>
+    </header>
+    <main>
+      <section class="card">
+        <h2>Super Saiyan God Super Saiyan</h2>
+        <p>Harness divine ki, absolute calmness, and devastating power.</p>
+        <div class="power-meter-container">
+          <div class="power-meter-label">KI LEVEL: <span id="kiPercent">0%</span></div>
+          <div class="power-meter-track">
+            <div class="power-meter-fill" id="powerMeter"></div>
+          </div>
+        </div>
+        <button id="powerBtn">Power Up</button>
+        <p class="power-status" id="powerStatus">Channel your ki...</p>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
   <canvas id="particleCanvas"></canvas>
   <div class="aura-container">
     <header>
