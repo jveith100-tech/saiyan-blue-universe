@@ -5,38 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saiyan Blue Universe</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
-    nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
-    nav a:hover, nav a.active { opacity: 1; color: var(--primary-blue); }
-  </style>
 </head>
 <body>
-  <canvas id="particleCanvas"></canvas>
-  <div class="aura-container">
-    <header>
-      <h1>SAIYAN BLUE <span>UNIVERSE</span></h1>
-      <p>Transcend Mortal Limits</p>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="videos.html">Cinematics</a>
-      </nav>
-    </header>
-    <main>
-      <section class="card">
-        <h2>Super Saiyan God Super Saiyan</h2>
-        <p>Harness divine ki, absolute calmness, and devastating power.</p>
-        <div class="power-meter-container">
-          <div class="power-meter-label">KI LEVEL: <span id="kiPercent">0%</span></div>
-          <div class="power-meter-track">
-            <div class="power-meter-fill" id="powerMeter"></div>
-          </div>
-        </div>
-        <button id="powerBtn">Power Up</button>
-        <p class="power-status" id="powerStatus">Channel your ki...</p>
-      </section>
-    </main>
+  <canvas id="particle-canvas"></canvas>
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-logo">&#9889; UNIVERSE</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="transformations.html">Transformations</a>
+      <a href="characters.html">Characters</a>
+      <a href="videos.html">Cinematics</a>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="aura-ring"></div>
+    <h1>SAIYAN BLUE <span class="glow-text">UNIVERSE</span></h1>
+    <p class="tagline">Transcend Mortal Limits</p>
+    <div class="charge-wrap">
+      <div class="ki-counter" id="kiCounter">KI: 0</div>
+      <svg class="charge-ring" viewBox="0 0 120 120" id="chargeRing">
+        <circle class="ring-bg" cx="60" cy="60" r="52"/>
+        <circle class="ring-fill" cx="60" cy="60" r="52" id="ringFill"/>
+      </svg>
+      <button id="powerBtn" class="power-btn">
+        <span id="btnLabel">HOLD TO<br>POWER UP</span>
+      </button>
+    </div>
+    <div class="ki-bar-wrap">
+      <div class="ki-bar-track"><div class="ki-bar-fill" id="kiBarFill"></div></div>
+      <div class="ki-bar-label" id="kiBarLabel">0%</div>
+    </div>
+    <p class="power-status" id="powerStatus">Channel your divine ki...</p>
+  </section>
+  <section class="preview-grid">
+    <a href="transformations.html" class="preview-card">
+      <img src="resource/saiyan_blue_god.webp" alt="Final Form" loading="lazy">
+      <div class="preview-info"><h3>Transformations</h3><p>9 divine forms - explore every ascension</p></div>
+    </a>
+    <a href="characters.html" class="preview-card">
+      <img src="resource/kazeon_heir_storm_aura.webp" alt="Kazeon Heir" loading="lazy">
+      <div class="preview-info"><h3>Characters</h3><p>The warriors who shattered heaven's limits</p></div>
+    </a>
+    <a href="videos.html" class="preview-card">
+      <img src="resource/saiyan_blue_genesis_break.webp" alt="Genesis Break" loading="lazy">
+      <div class="preview-info"><h3>Cinematics</h3><p>5 epic cinematic videos</p></div>
+    </a>
+  </section>
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">X</button>
+      <img class="modal-img" id="modalImg" src="" alt="">
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-lore" id="modalLore"></p>
+      <div class="stat-bars" id="modalStats"></div>
+    </div>
   </div>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
